@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %} 
+        <body>
+            <h1>List of Image</h1>
+            <form  method = "POST">
+                <div class="list-group">
+                        {% for key, values in response.items %}
+                            {% for value in values %}
+                            <a href="/taglist/?id={{value}}"  class="list-group-item list-group-item-action" > {{value}}</a>
+                            {% endfor %}
+                </div>
+                 {% endfor %}
+
+            
+        </body>
+
+
+{% endblock %}

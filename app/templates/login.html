@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <form  method="post">
+            {% csrf_token %}
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">login to docker registery</div>
+                    <div class="panel-body">
+                        {% if error_message %}
+                            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                      
+                        <div class="form-group clearfix">
+                            <label for="dockerRegistyUrl">Docker Registry Address</label>
+                            <input type="text" class="form-control" id="dockerRegistyUrl" name="dockerRegistyUrl"  placeholder="Enter docker registry url">
+                            <small id="dockerRegistyUrlHelp" class="form-text text-muted">enter your dockre registry with https protocol</small>
+                        </div>
+                       
+                        <div class="form-group clearfix">
+                            <label for="dockerRegistyUsername">Username</label>
+                            <input type="text" class="form-control" id="dockerRegistyUsername" name="dockerRegistyUsername" placeholder="Enter docker registry username ">
+                            <small id="dockerRegistyUrlHelp" class="form-text text-muted">enter a valid username of registry</small>
+                        </div>
+
+                       
+                        <div class="form-group clearfix">
+                            <label for="dockerRegistyPassword">Password</label>
+                            <input type="text" class="form-control" id="dockerRegistyPassword" name="dockerRegistyPassword"  placeholder="Enter docker registry password ">
+                            <small id="dockerRegistyPaswordHelp" class="form-text text-muted">enter a valid password of registry</small>
+                        </div>
+          
+                        <div class="col-md-5 col-md-offset-3">
+                            <input type="submit" value="login" class="btn btn-primary btn-lg btn-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
