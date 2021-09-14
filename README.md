@@ -9,7 +9,6 @@ This project  provide a simple user interface for your private docker registry ,
 
 -   list all your repositories/images.
 -   list all tags for a image.
--   display image size
 -   show `docker pull` for image
 -   Show sha256 for specific tag
 -   delete image with specific tag
